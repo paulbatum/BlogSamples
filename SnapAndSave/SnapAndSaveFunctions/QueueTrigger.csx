@@ -10,7 +10,7 @@ public static void Run(Coupon myQueueItem, TraceWriter log, Coupon inputRecord, 
     inputRecord.Expiry = myQueueItem.Expiry;
     log.Info($"Write item to Mobile Table: {myQueueItem.Id}");
     
-    string payload = "{data: {msg:'" + inputRecord.Description + "'}}";
+    string payload = "{\"data\": {\"message\":\"" + inputRecord.Description + "\"}}";
     log.Info($"Payload: {payload}");
     notification = new GcmNotification(payload);
 
