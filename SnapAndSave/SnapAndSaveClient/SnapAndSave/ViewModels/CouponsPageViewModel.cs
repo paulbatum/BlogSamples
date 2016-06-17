@@ -63,7 +63,7 @@ namespace SnapAndSave
 				coupon.Description = "Placeholder";
 
 				var targetPath = fileHelper.CopyFileToAppDirectory (coupon.Id, photo.Path);
-				await couponService.InsertCoupon (coupon, Path.GetFileName(targetPath));
+				await couponService.InsertCoupon (coupon, targetPath);
 				await SearchCouponsAsync ("");
 			}
 
